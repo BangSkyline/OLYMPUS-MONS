@@ -6,7 +6,7 @@ L'objectif principal : orchestrer des services conteneurisés avec **K3s** (moni
 
 ## Aperçu de l'Architecture
 
-![Olympus Banner](Infra-Pysique.png)
+![Olympus Banner](Infra-Physique.png)
 
 ## Composants Principaux
 
