@@ -1,8 +1,8 @@
 # Homelab Infra Entreprise-like : Proxmox + pfSense + K3s + Active Directory
 
-Ce README documente la conception d'une infrastructure homelab simulant un environnement d'entreprise, en remplaçant une infra Docker standalone par un setup virtualisé sur Proxmox.
+Ce README documente la conception d'une infrastructure homelab simulant un environnement d'entreprise, en remplaçant une infra Docker par un setup virtualisé sur Proxmox.
 
-L'objectif principal : orchestrer des services conteneurisés avec **K3s** (monitoring, admin, apps enterprise comme GLPI, Planka, Zulip...), tout en intégrant une gateway **pfSense**, un domaine **Active Directory** (Windows Server + Windows 11 Pro), et une station d'administration.
+L'objectif principal : orchestrer des services conteneurisés avec **K3s** (monitoring, admin, apps enterprise comme GLPI, Planka...), tout en intégrant une gateway **pfSense**, un domaine **Active Directory** (Windows Server + Windows 11 Pro), et une station d'administration.
 
 ## Aperçu de l'Architecture
 
@@ -24,7 +24,7 @@ L'objectif principal : orchestrer des services conteneurisés avec **K3s** (moni
 - `vmbr1` : LAN interne (VLAN aware, sans IP sur l'hôte Proxmox)
 
 ### Segmentation VLANs (802.1Q)
-| VLAN | Subnet Exemple      | Usage                          | VMs associées                  |
+| VLAN | Subnets             | Usage                          | VMs associées                  |
 |------|---------------------|--------------------------------|--------------------------------|
 | 10   | 192.168.10.0/24     | Management                     | Ubuntu Desktop Admin           |
 | 20   | 192.168.20.0/24     | K3s Cluster                    | K3s server + 3 workers         |
