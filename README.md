@@ -1,8 +1,8 @@
-# Homelab Infra Entreprise-like : Proxmox + pfSense + K3s + Active Directory
+# Homelab : Proxmox + pfSense + K3s + Active Directory
 
 Ce README documente la conception d'une infrastructure homelab simulant un environnement d'entreprise, en remplaçant une infra Docker par un setup virtualisé sur Proxmox.
 
-L'objectif principal : orchestrer des services conteneurisés avec **K3s** (monitoring, admin, apps enterprise comme GLPI, Planka...), tout en intégrant une gateway **pfSense**, un domaine **Active Directory** (Windows Server + Windows 11 Pro), et une station d'administration.
+L'objectif principal : orchestrer des services conteneurisés avec **K3s** (monitoring, admin, apps métier comme GLPI, Planka...), tout en intégrant une gateway **pfSense**, un domaine **Active Directory** (Windows Server + Windows 11 Pro), et une station d'administration.
 
 ## Aperçu de l'Architecture
 
