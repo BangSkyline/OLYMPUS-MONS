@@ -39,30 +39,29 @@ L'objectif principal : orchestrer des services conteneurisés avec **K3s** (moni
 
 - **HA** : Embedded etcd sur K3s (avec les 3 workers), MetalLB pour LoadBalancer
 - **Storage** : Longhorn sur K3s pour PV distribués
-- **Sécurité** : VPN (WireGuard/OpenVPN) sur pfSense, pfBlockerNG, Network Policies sur K3s (Calico optionnel)
+- **Sécurité** : VPN Tailscale (WireGuard), pfBlockerNG, Network Policies sur K3s
 - **Monitoring** : Prometheus + Grafana sur K3s, exporters pour Proxmox/pfSense
-- **Automation** : Ansible/Terraform pour provisionning, GitOps (ArgoCD) sur K3s
+- **Automation** : Ansible + Terraform pour provisionning, Jenkins
 - **Backups** : Proxmox Backup Server, Velero sur K3s
 - **Intégration AD** : Joindre VMs Linux au domaine (realmd + sssd), Kerberos pour auth centralisée
 
 ## Intégration Services Natifs K3s
 
-- **CoreDNS** : Forward queries cluster.local vers pfSense, ou désactiver pour utiliser Technitium/AD DNS
+- **CoreDNS** : Forward queries cluster local vers pfSense, ou désactiver pour utiliser Technitium/AD DNS
 - **Ingress** : Port forward 80/443 depuis pfSense, ou MetalLB pour IPs internes
 - **Flannel CNI** : Overlay interne, pas de conflit avec pfSense (binder à interface VLAN 20)
 
 ## Ressources Allouées Suggerées (par VM)
 
-- pfSense : 2-4 cœurs, 4GB RAM
-- Ubuntu Desktop : 4 cœurs, 8GB RAM, GPU passthrough si besoin
+- pfSense : 2 cœurs, 4GB RAM
+- Ubuntu Desktop : 4 cœurs, 8GB RAM
 - K3s Server : 4 cœurs, 8GB RAM
-- K3s Workers : 2-4 cœurs, 4-6GB RAM chacun
+- K3s Workers : 2-4 cœurs, 4GB RAM chacun
 - WS2025 : 4 cœurs, 8GB RAM
 - W11 Pro : 4 cœurs, 8GB RAM
 
 ## Références
 - Docs K3s : https://docs.k3s.io
 - Proxmox + pfSense guides : Communautés Reddit /r/homelab et forums Proxmox
-- Inspiration diagrammes : Divers homelabs open-source sur GitHub
-
+- Diagrammes : FossFlow
 Ce setup évolue facilement vers une infra plus pro (clustering Proxmox, Ceph storage, etc.).
